@@ -1,4 +1,5 @@
 import itertools
+from chooser import Chooser
 
 def findFuel(val) :
     fuel = 0
@@ -77,20 +78,9 @@ def part2(inputs) :
 
 
 if __name__ == '__main__':
-    file = open("resources/input1.txt", "r")
-    
-    totalSum = 0
-    totalFuelSum = 0
-    
-    for line in file :
-        val = int(line)
-        result = int(val / 3) - 2
-        fuelRes = findFuel(val)
-        totalSum += result 
-        totalFuelSum += fuelRes 
-
-    print(totalSum)
-    print(totalFuelSum)
+    chooser = Chooser()
+    chooser.set_file_name('resources/input1.txt')
+    chooser.function1()
 
     with open('resources/input2.txt') as file2:
         inputs = [int(i) for i in file2.read().split(',')]
